@@ -29,7 +29,7 @@ export const UserProvider = ({children}) => {
       })
       // İstek başarısız ise hatayı error stateıne aktar
       .catch(error => {
-        setLoading(error.message);
+        setError(error.message);
         setLoading(false);
       });
   }, []);

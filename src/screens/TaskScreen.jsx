@@ -1,11 +1,19 @@
-import {Button, FlatList, StyleSheet, Text, View} from 'react-native';
+import {
+  Button,
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import React, {useContext} from 'react';
 import Loader from '../components/Loader';
 import {TaskContext} from '../context/TaskContext';
 import Error from '../components/Error';
 
 const TaskScreen = () => {
-  const {tasks, loading, error} = useContext(TaskContext);
+  const {tasks, loading, error, removeTask, newTaskTitle, setNewtaskTitle} =
+    useContext(TaskContext);
   return (
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       {loading ? (
@@ -13,20 +21,35 @@ const TaskScreen = () => {
       ) : error ? (
         <Error />
       ) : (
-        <FlatList
-          data={tasks}
-          keyExtractor={item => item.id.toString()}
-          renderItem={({item}) => (
-            <View style={styles.item}>
-              <Text style={styles.title}>
-                {item.title.length > 20
-                  ? item.title.slice(0, 30) + '...'
-                  : item.title}
-              </Text>
-              <Button title="Remove" color={'#EEEDEB'} />
-            </View>
-          )}
-        />
+        <>
+          <FlatList
+            data={tasks}
+            keyExtractor={item => item.id.toString()}
+            renderItem={({item}) => (
+              <View style={styles.item}>
+                <Text style={styles.title}>
+                  {item.title.length > 20
+                    ? item.title.slice(0, 30) + '...'
+                    : item.title}
+                </Text>
+                <Button
+                  title="Remove"
+                  color={'#EEEDEB'}
+                  onPress={() => removeTask(item.id)}
+                />
+              </View>
+            )}
+          />
+          <View style={styles.inputContainer}>
+            <TextInput
+              value={newTaskTitle}
+              placeholder="New Task Title"
+              onChangeText={setNewtaskTitle}
+              style={styles.input}
+            />
+            <Button title="Add Task" />
+          </View>
+        </>
       )}
     </View>
   );
@@ -52,5 +75,24 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     fontSize: 16,
+  },
+  inputContainer: {
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingVertical: 35,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 40,
+    borderRadius: 10,
+    shadowColor: '#000',
+  },
+  input: {
+    backgroundColor: '#fff',
+    height: 40,
+    borderWidth: 1,
+    width: '75%',
+    padding: 5,
+    borderRadius: 5,
+    borderColor: '#ccc',
   },
 });

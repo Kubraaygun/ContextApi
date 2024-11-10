@@ -12,8 +12,15 @@ import {TaskContext} from '../context/TaskContext';
 import Error from '../components/Error';
 
 const TaskScreen = () => {
-  const {tasks, loading, error, removeTask, newTaskTitle, setNewtaskTitle} =
-    useContext(TaskContext);
+  const {
+    tasks,
+    loading,
+    error,
+    removeTask,
+    newTaskTitle,
+    setNewTaskTitle,
+    addTask,
+  } = useContext(TaskContext);
   return (
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       {loading ? (
@@ -44,10 +51,10 @@ const TaskScreen = () => {
             <TextInput
               value={newTaskTitle}
               placeholder="New Task Title"
-              onChangeText={setNewtaskTitle}
+              onChangeText={setNewTaskTitle}
               style={styles.input}
             />
-            <Button title="Add Task" />
+            <Button title="Add Task" onPress={() => addTask(newTaskTitle)} />
           </View>
         </>
       )}

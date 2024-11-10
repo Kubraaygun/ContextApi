@@ -30,6 +30,17 @@ export const TaskProvider = ({children}) => {
     Alert.alert('Task silindi');
   };
 
+  const addTask = title => {
+    const newTask = {
+      userId: 1,
+      id: tasks.length + 1,
+      title,
+    };
+    setTasks([newTask, ...tasks]);
+
+    Alert.alert('Yeni Task Eklendi');
+  };
+
   return (
     <TaskContext.Provider
       value={{
@@ -39,6 +50,7 @@ export const TaskProvider = ({children}) => {
         removeTask,
         newTaskTitle,
         setNewTaskTitle,
+        addTask,
       }}>
       {children}
     </TaskContext.Provider>

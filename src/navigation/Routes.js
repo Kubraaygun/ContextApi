@@ -9,7 +9,7 @@ export default function Routes() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="UserList" component={UserListScreen} />
-      <Stack.Screen name="UserListDetail" component={UserDetailScreen} />
+      <Stack.Screen name="UserDetails" component={UserDetailScreen} />
       <Stack.Screen name="Task" component={TaskScreen} />
     </Stack.Navigator>
   );

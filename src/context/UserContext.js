@@ -23,9 +23,15 @@ export const UserProvider = ({children}) => {
       // Apiye ıstek at
       .get('https://jsonplaceholder.typicode.com/users')
       // İstek başarılı ise state'e verileri aktar
-      .then(response => setUsers(response.data))
+      .then(response => {
+        setUsers(response.data);
+        setLoading(false);
+      })
       // İstek başarısız ise hatayı error stateıne aktar
-      .catch(error => setError(error.message));
+      .catch(error => {
+        setLoading(error.message);
+        setLoading(false);
+      });
   }, []);
 
   //3. adım: Sağlayıcı fonksıyonları mutlaka providerı return etmelidir ve App'i sarmalamalıdır.

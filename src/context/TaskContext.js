@@ -13,6 +13,7 @@ export const TaskProvider = ({children}) => {
       .get('https://jsonplaceholder.typicode.com/todos')
       .then(response => {
         setTasks(response.data);
+        setLoading(false);
       })
       .catch(err => {
         setError(err);

@@ -39,6 +39,7 @@ export const TaskProvider = ({children}) => {
     setTasks([newTask, ...tasks]);
 
     Alert.alert('Yeni Task Eklendi');
+    setNewTaskTitle('');
   };
 
   return (

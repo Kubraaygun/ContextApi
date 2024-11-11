@@ -14,16 +14,14 @@ The purpose of this project is to learn how to manage user and task data within 
   - User data is displayed as a list, and details of a selected user can be accessed.
 
 - **Task Management (TaskContext):**
-
-  - Tasks can be added, deleted, and listed.
-  - Task data is managed with TaskContext and shared between components.
+- Tasks can be added, deleted, and listed.
+- Task data is managed with TaskContext and shared between components.
 
 ## Project Structure
 
 - **Context Structure:**
-
-  - **UserContext:** The context that contains user data. It acts as a central data store for components in the application that need user data.
-  - **TaskContext:** The context that contains task data and related functions. It provides a central data store for task management within the application.
+- **UserContext:** The context that contains user data. It acts as a central data store for components in the application that need user data.
+- **TaskContext:** The context that contains task data and related functions. It provides a central data store for task management within the application.
 
 - **Provider Usage:** Both contexts, UserProvider and TaskProvider, wrap the App component, making the data available throughout the application.
 

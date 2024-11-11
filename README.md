@@ -14,8 +14,8 @@ The purpose of this project is to learn how to manage user and task data within 
   - User data is displayed as a list, and details of a selected user can be accessed.
 
 - **Task Management (TaskContext):**
-- Tasks can be added, deleted, and listed.
-- Task data is managed with TaskContext and shared between components.
+  - Tasks can be added, deleted, and listed.
+  - Task data is managed with TaskContext and shared between components.
 
 ## Project Structure
 

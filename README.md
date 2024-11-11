@@ -43,3 +43,7 @@ Context API allows for the centralized storage and management of data used acros
 - React Navigation
 - Axios
 - Context API
+
+## Screenshot
+
+![](./assets/api.gif)

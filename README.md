@@ -18,9 +18,12 @@ The purpose of this project is to learn how to manage user and task data within 
 ## Project Structure
 
 - **Context Structure:**
+
   - **UserContext:** The context that contains user data. It acts as a central data store for components in the application that need user data.
   - **TaskContext:** The context that contains task data and related functions. It provides a central data store for task management within the application.
+
 - **Provider Usage:** Both contexts, UserProvider and TaskProvider, wrap the App component, making the data available throughout the application.
+
 - **Fetching and Updating Data from Context:** Components can use the useContext hook to access the required data and functions, allowing them to manage user and task data.
 
 ## Used Screens and Components

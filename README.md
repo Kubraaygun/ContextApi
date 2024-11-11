@@ -32,3 +32,14 @@ The purpose of this project is to learn how to manage user and task data within 
 - **UserDetailScreen:** Shows the user's name, email, and phone information. From this screen, users can also navigate to the task list.
 - **TaskScreen:** Includes functions to list tasks, add new tasks, and delete existing tasks.
 - **Loader and Error Components:** Provide a loading indicator and display error messages during data fetching.
+
+## Usage of Context API
+
+Context API allows for the centralized storage and management of data used across the application. In this project, user and task data are managed through UserContext and TaskContext, making it easy to share them between components. This enables each component to access the necessary data and functions from a single point, streamlining data management and interaction.
+
+## Technologies Used
+
+- React Native
+- React Navigation
+- Axios
+- Context API
